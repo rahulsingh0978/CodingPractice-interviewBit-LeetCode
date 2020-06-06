@@ -1,0 +1,31 @@
+package rahul_practice.com.practice;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class LargestDifferenceArray {
+	public static int maxDifference(List<Integer> arr) {
+	    // Write your code here
+	    int diff = -1;
+	    for(int i=0;i<arr.size();i++) {
+	    	System.out.println(arr.get(i));
+	    }
+	    return -1;
+		
+	    }
+	public static void main(String[] args) {
+		List<Integer> ar = new ArrayList<Integer>();
+		ar.add(1);
+		ar.add(2);
+		maxDifference(ar);
+		Map<Integer,Integer> map = new HashMap<>();
+		map.put(1, 2);
+		//map.put(2, 0);
+		for(Map.Entry<Integer, Integer> e : map.entrySet()) {
+			System.out.println(e.getKey()+" as "+e.getValue());
+		}
+		System.out.println(map.size());
+	}
+}

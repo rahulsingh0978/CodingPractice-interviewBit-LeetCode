@@ -1,0 +1,28 @@
+package rahul_practice.com.practice;
+
+public class LeetRainWater {
+	public static int rainWater(int[] heights) {
+		int max=0,soFar=0;
+		int n = heights.length;
+		int[] lmax = new int[n];
+		int[] rmax = new int[n];
+		int lmaxval=0,rmaxval=0;
+		for(int i=0;i<n;i++) {
+			if(heights[i]>lmaxval) {
+				lmaxval = heights[i];
+			}
+			lmax[i] = lmaxval; 
+		}
+		for(int j=n-1;j>-1;j--) {
+			if(heights[j]>rmaxval) {
+				rmaxval=heights[j];
+			}
+			rmax[j]=rmaxval;
+		}
+		return max;
+	}
+	public static void main(String[] args) {
+		int[] val = new int[] {};
+		System.out.println(rainWater(val));
+	}
+}

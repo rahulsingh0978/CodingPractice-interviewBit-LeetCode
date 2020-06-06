@@ -1,0 +1,11 @@
+package leetcode;
+
+public class LongestPalindrome {
+	public String longestPalindrome(String s) {
+		return "r";
+	}
+	public static void main(String[] args) {
+		boolean[][] b =new boolean[1][1];
+		System.out.println(b[0][0]);
+	}
+}

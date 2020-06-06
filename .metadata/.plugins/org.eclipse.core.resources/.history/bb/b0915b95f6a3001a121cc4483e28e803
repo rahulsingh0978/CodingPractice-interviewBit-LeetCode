@@ -1,0 +1,5 @@
+package practice.MultiThreading.practice;
+
+public class NameRunnable {
+
+}

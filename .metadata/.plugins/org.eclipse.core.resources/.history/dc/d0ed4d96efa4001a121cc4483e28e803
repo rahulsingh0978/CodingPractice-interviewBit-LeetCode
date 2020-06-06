@@ -1,0 +1,25 @@
+package leetcode;
+
+import java.util.HashMap;
+
+public class LRUCache {
+	class Node{
+		int val ;
+		int key;
+		Node next,prev;
+		
+	}
+	HashMap<Integer,Integer> map = new HashMap();
+    int capacity;
+    public LRUCache(int capacity) {
+        this.capacity = capacity;
+    }
+    
+    public int get(int key) {
+        
+    }
+    
+    public void put(int key, int value) {
+        
+    }
+}

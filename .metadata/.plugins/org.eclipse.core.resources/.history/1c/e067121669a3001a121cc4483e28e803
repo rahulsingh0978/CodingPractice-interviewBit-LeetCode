@@ -1,0 +1,69 @@
+package interviewBits;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class WindoMinSubString {
+	public String minWindow(String A, String B) {
+		int s = 0;
+		int e = 0;
+		int n = A.length();
+		int bn = B.length();
+		Map<Character, Integer> count = new HashMap<>();
+		for (int i = 0; i < B.length(); i++) {
+			if (count.containsKey(B.charAt(i))) {
+				count.put(B.charAt(i), count.get(B.charAt(i)) + 1);
+			}
+			count.put(B.charAt(i), 1);
+		}
+		int minCount = Integer.MIN_VALUE;
+		Map<Character, Integer> temp = new HashMap<>();
+		boolean flag = true;
+		while (s < e && e < n) {
+			/*if (e - s >= bn) {
+				for (Map.Entry<Character, Integer> map : count.entrySet()) {
+						
+				}
+			} else */
+			if (flag && count.containsKey(A.charAt(e))) {
+				if (temp.containsKey(A.charAt(e))) {
+					temp.put(A.charAt(e), count.get(B.charAt(e)) + 1);
+				}
+				temp.put(A.charAt(e), 1);
+				e++;
+			}
+			while(sameMap(temp,count)) {
+				minCount = Math.min(minCount, e-s);
+				s++;
+			}
+			
+		}
+
+		return A.substring(s, e + 1);
+	}
+	public boolean sameMap(Map<Character, Integer> a,Map<Character, Integer> b) {
+		for(Map.Entry<Character, Integer> map1: a.entrySet()) {
+			
+				if(!b.containsKey(map1.getKey()) ) {
+					return false;
+				}else {
+					if(map1.getValue()<b.get(map1.getKey())){
+						return false;
+					}
+				}
+			
+		}
+		return true;
+		
+	}
+	public static void main(String[] args) {
+		WindoMinSubString obj = new WindoMinSubString();
+		Map<Character, Integer> temp = new HashMap<>();
+		temp.put('a',4);
+		Map<Character, Integer> temp2 = new HashMap<>();
+		temp2.put('a',1);
+		//temp2.put('c',1);
+		//System.out.println(temp.equals(temp2));
+		System.out.println(obj.sameMap(temp, temp2));
+	}
+}

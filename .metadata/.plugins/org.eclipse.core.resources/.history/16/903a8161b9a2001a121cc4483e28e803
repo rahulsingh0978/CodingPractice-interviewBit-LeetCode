@@ -1,0 +1,58 @@
+package leetcode;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class MaxPoinOnLine {
+	public int maxPoints(int[][] points) {
+
+		int n = points.length;
+		if(n<2) {
+			return points[0][0];
+		}
+		int max=0;
+		int globalMax=0;
+		Set<String> set = new HashSet<>();
+		for(int i=0;i<n && !set.contains(points[i][0]) && !set.contains(points[i][1]) ;i++) {
+			Map<Double,Integer> map = new HashMap();
+			int[] a = points[i];
+			int same=0;
+			for(int j=i+1;j<n;j++) {
+				if(sameCheck(a,points[j])) {
+					same++;
+					continue;
+				}
+				else {
+					double slope = slopeCalculate(a,points[j]);
+					map.put(slope, map.getOrDefault(slope, 1)+1);
+					max = Math.max(max,map.get(slope));
+				}
+			}
+			globalMax = Math.max(globalMax,max);
+		}
+		return max;
+	}
+	public boolean sameCheck(int[] a,int[] b) {
+		return a[0]==b[0] && a[1]==b[1];
+	}
+	public double slopeCalculate(int[] a,int[] b) {
+		if(a[0]==b[0]) {
+			return Integer.MAX_VALUE;
+		}
+		if(a[1]==b[1]) {
+			return 0;
+		}
+		else {
+			return ((double) b[1]-b[0]/(double) a[1]-a[0]);
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		MaxPoinOnLine obj = new MaxPoinOnLine();
+		int[][] points = {{1,1},{3,2},{5,3},{4,1},{2,3},{1,4}};
+		System.out.println(obj.maxPoints(points));
+	}
+}

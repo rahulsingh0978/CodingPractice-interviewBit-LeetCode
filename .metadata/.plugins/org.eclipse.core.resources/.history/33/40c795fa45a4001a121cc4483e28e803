@@ -1,0 +1,45 @@
+package interviewBits;
+
+import java.util.HashSet;
+
+class TreeNode {
+	int val;
+	TreeNode left;
+	TreeNode right;
+	TreeNode(int x) {
+		val = x;
+		left = null;
+		right = null;
+	}
+}
+
+public class BST2sum {
+	HashSet<Integer> hs;
+
+	public int t2Sum(TreeNode A, int B) {
+		if (A == null) {
+			return 0;
+		} else {
+			this.hs = new HashSet<Integer>();
+			traverseAndFillHash(A, this.hs);
+			Iterator value = this.hs.iterator();
+			while (value.hasNext()) {
+				int val = B - (int) value.next();
+				if (hs.contains(value.next()) && hs.contains(val)) {
+					return 1;
+				}
+			}
+			return 0;
+		}
+	}
+
+	public void traverseAndFillHash(TreeNode A, HashSet<Integer> hs) {
+		if (A == null) {
+			return;
+		} else {
+			traverseAndFillHash(A.left, hs);
+			hs.add(A.val);
+			traverseAndFillHash(A.right, hs);
+		}
+	}
+}

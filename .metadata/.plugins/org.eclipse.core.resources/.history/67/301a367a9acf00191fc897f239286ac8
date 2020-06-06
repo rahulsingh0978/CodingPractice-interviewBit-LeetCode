@@ -1,0 +1,74 @@
+package rahul_practice.com.practice;
+
+public class leetReverse {
+	public static int reverse(int x) {
+        boolean negative = false;
+        /*if(x < 0 ){
+            negative = true;
+            x *=-1;
+        }*/
+        int val = x;
+        while(val%10==0) {
+        	val/=10;
+        }
+        
+        int n = 0;
+        while(val>0) {
+        	n =n*10+ val%10;
+        	val = val/10;
+        }
+        /*if(negative) {
+        	return -1*n;
+        }*/
+        return n;
+    }
+	
+	public static long binary(long n){
+        long sum=0;
+        while(n/2>0){
+            sum=sum*10+n%2;
+            n=n/2;
+        }
+        return sum;
+    }
+	
+	
+	static void decToBinary(long n) 
+    { 
+        // array to store binary number 
+        long[] binaryNum = new long[1000]; 
+   
+        // counter for binary array 
+        int i = 0; 
+        while (n > 0)  
+        { 
+            // storing remainder in binary array 
+            binaryNum[i] = n % 2; 
+            n = n / 2; 
+            i++; 
+        } 
+        long[] rev = new long[10000];
+        // printing binary array in reverse order 
+        int k=0;
+        for (int j = i - 1; j >= 0; j--) { 
+           rev[k]=binaryNum[j];
+           System.out.println(binaryNum[j]+ " "+rev[k]);
+           k++;
+        }
+        for(int m=0;m<i;m++) {
+        	System.out.println(rev[m]);
+        }
+    } 
+	
+	public static void main(String[] args) {
+		int t = 1534236469;
+		//System.out.println(Math.pow(2, 32));
+		//System.out.println(reverse(t))	;
+		//System.out.println(21/10/10);
+		//System.out.println(0^1);
+		//System.out.println(1^1);
+		decToBinary(8);
+		//System.out.println(binary(8));
+	}
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;leetcode.LRUcache&apos; to &apos;LRUCache&apos;&#x0A;- Original project: &apos;com.practice&apos;&#x0A;- Original element: &apos;leetcode.LRUcache&apos;&#x0A;- Renamed element: &apos;leetcode.LRUCache&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LRUcache&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;leetcode{LRUcache.java[LRUcache" matchStrategy="1" name="LRUCache" qualified="false" references="true" similarDeclarations="false" stamp="1591096046714" textual="false" version="1.0"/>
+</session>

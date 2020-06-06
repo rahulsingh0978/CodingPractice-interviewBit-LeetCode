@@ -1,0 +1,10 @@
+package leetcode;
+
+public class LongestPalindrome {
+	public String longestPalindrome(String s) {
+		return "r";
+	}
+	public static void main(String[] args) {
+		
+	}
+}

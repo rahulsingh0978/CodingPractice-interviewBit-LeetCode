@@ -1,0 +1,99 @@
+package rahul_practice.com.practice;
+
+public class NqueenProblem {
+	public static boolean Nqueen(boolean[][] board, int size, int r) {
+		if (r == size - 1) {
+			for (int i = 0; i < size; i++) {
+				for (int j = 0; j < size; j++) {
+					System.out.print(board[i][j] + " ");
+				}
+				System.out.println();
+			}
+			return true;
+		} else {for(int i =0;i<size;i++) {
+			int newRow = r+1;
+			if(isvalid(board, newRow, i, size)) {
+				board[newRow][i]=true;
+				if(Nqueen(board, size, newRow)) {
+					return true;
+				}
+				board[newRow][i]=false;
+			}
+		}
+
+		}
+		return false;
+	}
+
+	public static boolean isvalid(boolean[][] board, int row, int col,int size) {
+		for (int i = 0; i < row; i++) {
+			if (board[i][col]) {
+				return false;
+			}
+		}
+		
+		for(int i=row,j=col;i>=0&&j>=0;i--,j--) {
+			if(board[i][j]) {
+				return false;
+			}
+		}
+		
+		for(int i=row,j=col;i>=0&&j<size;i--,j++) {
+			if(board[i][j]) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	
+	
+	
+	public static boolean NqueenSol2(boolean[][] board , int size,int r) {
+		if(r==size-1) {
+			for(int i=0;i<size;i++) {
+				for(int j=0;j<size;j++) {
+					System.out.print(board[i][j]+" ");
+				}
+				System.out.println();
+			}
+			return true;
+		}else {
+			for(int i=0;i<size;i++) {
+				int rn = r+1;
+				 if(isValid2(board,  rn,i, size)) {
+					 board[rn][i]=true;
+					 if(NqueenSol2(board, size, rn)) {
+						 return true;
+					 }
+					 board[rn][i]=false;
+				 }
+			}
+		}
+		return false;
+	}
+	
+	public static boolean isValid2(boolean[][] board,int r,int c,int size) {
+		for(int i=0;i<r;i++) {
+			if(board[r][i]) {
+				return false;
+			}
+		}
+		for(int i=r,j=c;i>=0&&j<size;j++,i--) {
+			if(board[i][j]) {
+				return false;
+			}
+		}
+		for(int i=r,j=c;i>=0&&j>=0;i--,j--) {
+			if(board[i][j]) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public static void main(String[] args) {
+	 boolean[][] board = {{false,false,false,false},{false,false,false,false},{false,false,false,false},{false,false,false,false}};
+	 NqueenSol2(board, 4, -1);
+	}
+}

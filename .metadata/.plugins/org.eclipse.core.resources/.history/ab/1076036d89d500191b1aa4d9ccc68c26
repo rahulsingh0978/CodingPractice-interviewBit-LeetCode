@@ -1,0 +1,13 @@
+package rahul_practice.com.practice;
+
+class BinTree{
+	int data;
+	public BinTree left,right;
+	BinTree(int data){
+		this.data=data;
+	}
+}
+public class BinaryTreePrint {
+	BinTree  root = new BinTree(10) ;
+	root.left = new BinTree(12);
+}

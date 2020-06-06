@@ -1,0 +1,10 @@
+package rahul_practice.com.practice;
+
+class MorNode{
+	char data;
+	MorNode left,right;
+}
+
+public class MorseCode {
+
+}

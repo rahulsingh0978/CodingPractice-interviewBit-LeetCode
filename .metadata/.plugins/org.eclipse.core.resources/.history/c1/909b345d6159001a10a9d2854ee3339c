@@ -1,0 +1,10 @@
+package rahul_practice.com.practice;
+
+class Node{
+	char data;
+	Node left,right;
+}
+
+public class MorseCode {
+
+}

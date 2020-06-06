@@ -1,0 +1,24 @@
+package rahul_practice.com.practice;
+
+public class PalindromCheck {
+	public static boolean palindromicTest(String s) {
+		boolean test = true;
+		int n = s.length()-1;
+		int i=0;
+		while(i<n) {
+			if(s.charAt(i)==s.charAt(n)) {
+				i++;
+				n--;
+			}else {
+				return false;
+			}
+		}
+		
+		return test;
+	}
+	
+	public static void main(String[] args) {
+		String s = "a";
+		System.out.println(palindromicTest(s));
+	}
+}

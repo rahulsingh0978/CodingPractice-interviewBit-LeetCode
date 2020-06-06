@@ -1,0 +1,51 @@
+package interviewBits;
+
+public class gridPath {
+
+	int count;
+
+	public int uniquePathsWithObstacles(int[][] A) {
+		if (A.length == 0) {
+			return 0;
+		}
+		int visited[][] = new int[A.length][A[0].length];
+		for (int i = 0; i < A.length; i++) {
+			for (int j = 0; j < A[0].length; j++) {
+				visited[i][j] = 0;
+			}
+		}
+		this.count = 0;
+		dfs(A, visited, 0, 0, A.length, A[0].length, this.count);
+		return this.count;
+	}
+
+	public void dfs(int[][] a, int[][] visited, int r, int c, int R, int C, int count) {
+		if (r == R && c == C) {
+			return;
+		} else {
+			if (isValid(a, visited, R, C, r, c)) {
+				count++;
+				a[r][c] = 1;
+				visited[r][c] = 1;
+				dfs(a, visited, r, c + 1, R, C, count);
+				dfs(a, visited, r + 1, c, R, C, count);
+				count--;
+				a[r][c] = 0;
+				visited[r][c] = 0;
+			}
+		}
+	}
+
+	public boolean isValid(int[][] a, int[][] visited, int R, int C, int r, int c) {
+		if (r < 0 || r >= R || c < 0 || c >= C || visited[r][c] != 0 || a[r][c] == 1) {
+			return false;
+		}
+		return true;
+	}
+	public static void main(String[] args) {
+		int[][] A = new int[1][1];
+		A[0][0]=0;
+		gridPath obj = new gridPath();
+		System.out.println(obj.uniquePathsWithObstacles(A));
+	}
+}

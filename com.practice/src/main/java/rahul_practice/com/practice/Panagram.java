@@ -1,0 +1,53 @@
+package rahul_practice.com.practice;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Panagram {
+
+	/*
+	 * Complete the 'checkPangram' function below.
+	 *
+	 * The function is expected to return a STRING. The function accepts
+	 * STRING_ARRAY strings as parameter.
+	 */
+
+	public static String checkPangram(List<String> strings) {
+		// Write your code here
+		
+		String op = "";
+
+		for (String val : strings) {
+			int index = 0;
+			boolean[] checker = new boolean[26];
+			boolean t = true;
+			for (int i = 0; i < val.length(); i++) {
+				if ('A' <= val.charAt(i) && 'Z' >= val.charAt(i)) {
+					index = val.charAt(i) - 'A';
+				} else if ('a' <= val.charAt(i) && 'z' >= val.charAt(i)) {
+					index = val.charAt(i) - 'a';
+				}
+				checker[index] = true;
+			}
+
+			for (int i = 0; i < 26; i++) {
+				if (checker[i] == false) {
+					t = false;
+				}
+			}
+			op += t?'1':'0';
+		}
+		return op;
+	}
+
+	public static void main(String[] args) {
+		List<String> li = new ArrayList<String>();
+
+		li.add("we promptly judged antique ivory buckles for the next prize");
+		li.add("we promptly judged antique ivory buckles for the prizes");
+		li.add("the quick brown fox jumps over the lazy dog");
+		li.add("the quick brown fox jump over the lazy dog");
+		System.out.println(checkPangram(li));
+	}
+
+}
