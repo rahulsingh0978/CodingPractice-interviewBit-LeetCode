@@ -8,8 +8,8 @@ import java.util.LinkedList;
 
 class TreeNode {
 	int val;
-	TreeNode left;
-	TreeNode right;
+	TNode left;
+	TNode right;
 
 	TreeNode() {
 	}
@@ -18,7 +18,7 @@ class TreeNode {
 		this.val = val;
 	}
 
-	TreeNode(int val, TreeNode left, TreeNode right) {
+	TreeNode(int val, TNode left, TNode right) {
 		this.val = val;
 		this.left = left;
 		this.right = right;
@@ -26,13 +26,13 @@ class TreeNode {
 }
 
 public class LevelOrderTraversal {
-	public List<List<Integer>> levelOrder(TreeNode root) {
+	public List<List<Integer>> levelOrder(TNode root) {
 		if (root == null) {
 			return new ArrayList();
 		}
 		List<List<Integer>> result = new ArrayList<>();
-		Queue<TreeNode> q1 = new LinkedList<>();
-		Queue<TreeNode> q2 = new LinkedList<>();
+		Queue<TNode> q1 = new LinkedList<>();
+		Queue<TNode> q2 = new LinkedList<>();
 		q1.add(root);
 		while (!q1.isEmpty() || !q2.isEmpty()) {
 			List<Integer> temp1 = new ArrayList<>();
@@ -65,13 +65,13 @@ public class LevelOrderTraversal {
 		return result;
 	}
 
-	public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+	public List<List<Integer>> zigzagLevelOrder(TNode root) {
 		if (root == null) {
 			return new ArrayList();
 		}
 		List<List<Integer>> result = new ArrayList();
-		Stack<TreeNode> s1 = new Stack<>();
-		Stack<TreeNode> s2 = new Stack<>();
+		Stack<TNode> s1 = new Stack<>();
+		Stack<TNode> s2 = new Stack<>();
 		s1.push(root);
 		while (!s1.isEmpty() || !s2.isEmpty()) {
 			List<Integer> s1Nodes = new ArrayList();
@@ -107,12 +107,12 @@ public class LevelOrderTraversal {
 
 	}
 
-	public boolean isValidBST(TreeNode root) {
+	public boolean isValidBST(TNode root) {
 		return checkBst(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
 
 	}
 
-	public boolean checkBst(TreeNode root, int min, int max) {
+	public boolean checkBst(TNode root, int min, int max) {
 		if (root == null) {
 			return true;
 		}
@@ -122,10 +122,10 @@ public class LevelOrderTraversal {
 		return checkBst(root.left, min, root.val) & checkBst(root.right, root.val, max);
 	}
 
-	public List<Integer> inorderTraversal(TreeNode root) {
+	public List<Integer> inorderTraversal(TNode root) {
 		List<Integer> result = new ArrayList();
 
-		Stack<TreeNode> s = new Stack<>();
+		Stack<TNode> s = new Stack<>();
 		while (true) {
 			if (root != null) {
 				s.push(root);
@@ -142,16 +142,16 @@ public class LevelOrderTraversal {
 		return result;
 	}
 
-	public TreeNode buildTreeFromPreIn(int[] preorder, int[] inorder) {
+	public TNode buildTreeFromPreIn(int[] preorder, int[] inorder) {
 
 		return helper(0, 0, inorder.length - 1, preorder, inorder);
 	}
 
-	public TreeNode helper(int preStart, int inStart, int inEnd, int[] preorder, int[] inorder) {
+	public TNode helper(int preStart, int inStart, int inEnd, int[] preorder, int[] inorder) {
 		if (preStart > preorder.length - 1 || inStart > inEnd) {
 			return null;
 		}
-		TreeNode root = new TreeNode(preorder[preStart]);
+		TNode root = new TNode(preorder[preStart]);
 
 		int inIndex = 0;
 		for (int i = inStart; i <= inEnd; i++) {
@@ -165,16 +165,16 @@ public class LevelOrderTraversal {
 		return root;
 	}
 	
-	public TreeNode buildTreeFromPostIn(int[] postOrder, int[] inorder) {
+	public TNode buildTreeFromPostIn(int[] postOrder, int[] inorder) {
 		return helper2(postOrder.length-1,inorder.length-1,0,postOrder,inorder);
 		
 	}
 
-	public TreeNode helper2(int postEnd, int inStart, int inEnd, int[] postOrder, int[] inorder) {
+	public TNode helper2(int postEnd, int inStart, int inEnd, int[] postOrder, int[] inorder) {
 		if (postEnd < 0 || inStart < inEnd) {
 			return null;
 		}
-		TreeNode root = new TreeNode(postOrder[postEnd]);
+		TNode root = new TNode(postOrder[postEnd]);
 
 		int inIndex = inStart;
 		for (int i = inStart; i >=0 ; i--) {
@@ -206,9 +206,9 @@ public class LevelOrderTraversal {
 		 * n4, null); LevelOrderTraversal obj = new LevelOrderTraversal();
 		 * System.out.println(obj.isValidBST(root));
 		 */
-		TreeNode n3 = new TreeNode(3, null, null);
-		TreeNode n2 = new TreeNode(2, n3, null);
-		TreeNode root = new TreeNode(1, null, n2);
+		TNode n3 = new TNode(3, null, null);
+		TNode n2 = new TNode(2, n3, null);
+		TNode root = new TNode(1, null, n2);
 		LevelOrderTraversal obj = new LevelOrderTraversal();
 		List<Integer> list = obj.inorderTraversal(root);
 		for (Integer i : list) {

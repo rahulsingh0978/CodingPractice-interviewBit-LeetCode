@@ -1,0 +1,24 @@
+package interview;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+public class Problem3 {
+	public void removeItem(Queue q) {
+		
+	}
+	public void addItem(Queue q) {
+		
+	}
+	public static void main(String[] args) {
+		Stack<Integer> stack = new Stack();
+		Queue<Integer> queue = new LinkedList();
+		
+		/*
+		  1,2,3
+		  
+		  
+		 */
+	}
+}

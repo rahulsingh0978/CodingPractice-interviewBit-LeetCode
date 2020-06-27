@@ -1,0 +1,23 @@
+package oopsconcepts;
+
+import java.io.Serializable;
+
+class Demo implements Serializable {
+	int a;
+	int b;
+	static int bs;
+	transient int g;
+	String name;
+	Demo(int a,int b,int bs,int g,String name){
+		this.a=a;
+		this.b=b;
+		this.bs=bs;
+		this.g=g;
+		this.name=name;
+	}
+
+}
+
+public class SerializationDSer {
+
+}

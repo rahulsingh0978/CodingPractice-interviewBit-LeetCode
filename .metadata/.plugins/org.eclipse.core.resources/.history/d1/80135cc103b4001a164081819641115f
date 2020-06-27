@@ -1,0 +1,28 @@
+package leetcode;
+
+public class MnotoneIncreasingDigit {
+	/*public int monotoneIncreasingDigits(int N) {
+        String s = N+"";
+        int n=s.length();
+        StringBuilder sb = new StringBuilder();
+        int i =0;
+        for(int j=0;j<n ;){
+            if(Integer.parseInt(s.charAt(n-1)) < Integer.parseInt(s.charAt(j)) ){
+                sb.add(Integer.parseInt(s.charAt(n-1)));
+                j++;
+                while(j<n){
+                    s.add("9") ;
+                    j++;
+                    }
+                     break;
+                    }
+            sb.add(Integer.parseInt(s.charAt(j)));
+                     j++;
+        }
+       return Integer.parseInt(sb.toString()) ;
+    }*/
+	public static void main(String[] args) {
+		String s = "123";
+		System.out.println(Integer.parseInt(s.charAt(1)+"")+2);
+	}
+}

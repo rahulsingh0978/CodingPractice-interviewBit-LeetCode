@@ -1,0 +1,36 @@
+package interview;
+
+public class ComplexNumMul {
+	class Complex{
+        int r;
+        int i;
+        Complex(int r,int i){
+        	this.r=r;
+        	this.i=i;
+        }
+    }
+	// "1+-1i", "1+-1i"  (a+b)(c+d) = ac+ad+bc+bd;
+    public String complexNumberMultiply(String a, String b) {
+    	String[] val1 = a.split("+");
+    	String[] val2 = b.split("+");
+    	int r1 = Integer.parseInt(val1[0]);
+    	String i1;
+    	int r2= Integer.parseInt(val2[0]);
+    	String i2;
+    	String result=" ";
+    	int output = 0;
+    	int ac = r1*r2;
+    	int bd = -1 * Integer.parseInt(val1[1].substring(0,val1[1].length()-1)) 
+    			* Integer.parseInt(val2[1].substring(0,val1[1].length()-1)) ;
+    	//int ad=
+    	//int bc= 
+    	
+    	return result;
+    }
+    public static void main(String[] args) {
+    	ComplexNumMul obj = new ComplexNumMul();
+    	obj.complexNumberMultiply("1+-1i", "1+-1i");
+		String i="-1";
+		System.out.println(Integer.parseInt(i));
+	}
+}

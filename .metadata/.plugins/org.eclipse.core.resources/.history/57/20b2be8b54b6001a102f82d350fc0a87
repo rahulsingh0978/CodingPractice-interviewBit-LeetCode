@@ -1,0 +1,26 @@
+package leetcode;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PartitionLabels {
+	public static List<Integer> partitionLabels(String S) {
+		if(S.length()==0) {
+			return null;
+		}
+		List<Integer> lst = new ArrayList();
+		
+		int n = S.length();
+		int[] arr = new int[26];
+		for(int i=0;i<n;i++) {
+			arr[S.charAt(i)-'a'] = i;
+		}
+		
+		
+		return lst;
+	}
+
+	public static void main(String[] args) {
+		PartitionLabels.partitionLabels("abacd");
+	}
+}

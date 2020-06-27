@@ -1,8 +1,0 @@
-package leetcode;
-
-public class IntToRoman {
-	public String intToRoman(int num) {
-		HashMap<Integer,String> map = new HashMap();
-	}
-
-}

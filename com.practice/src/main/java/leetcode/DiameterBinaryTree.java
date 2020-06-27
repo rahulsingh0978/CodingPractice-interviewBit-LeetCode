@@ -5,13 +5,13 @@ public class DiameterBinaryTree {
         int val;
     }
     //int answer;
-    public int diameterOfBinaryTree(TreeNode root) {
+    public int diameterOfBinaryTree(TNode root) {
         A a = new A();
         a.val = Integer.MIN_VALUE; 
         int val = helper(root , a);
         return a.val;
     }
-    public int helper(TreeNode root,A answer){
+    public int helper(TNode root,A answer){
         if(root==null){
             return 0;
         }else{
@@ -28,11 +28,11 @@ public class DiameterBinaryTree {
     }
     public static void main(String[] args) {
     	
-    	TreeNode root = new TreeNode(1);
-    	root.left = new TreeNode(2);
-    	root.right = new TreeNode(3);  
-        root.left.left = new TreeNode(4);  
-        root.left.right =new TreeNode(5);
+    	TNode root = new TNode(1);
+    	root.left = new TNode(2);
+    	root.right = new TNode(3);  
+        root.left.left = new TNode(4);  
+        root.left.right =new TNode(5);
     	
     	
     	

@@ -1,0 +1,7 @@
+package oopsconcepts;
+
+import java.io.Serializable;
+
+public class SerializationDSer implements Serializable{
+
+}

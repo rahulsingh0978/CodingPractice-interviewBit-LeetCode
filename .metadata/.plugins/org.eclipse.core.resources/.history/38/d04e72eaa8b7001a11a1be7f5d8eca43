@@ -1,0 +1,12 @@
+package interview;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Problem2 {
+	public static void main(String[] args) {
+		String s1 = "triangle";
+		String s2 = "integral";
+		Set<Character> set1 = new HashSet();
+	}
+}

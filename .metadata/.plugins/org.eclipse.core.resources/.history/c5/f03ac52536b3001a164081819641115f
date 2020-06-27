@@ -1,0 +1,23 @@
+package interview;
+
+public class ComplexNumMul {
+	class Complex{
+        int r;
+        int i;
+        Complex(int r,int i){
+        	this.r=r;
+        	this.i=i;
+        }
+    }
+    public String complexNumberMultiply(String a, String b) {
+    	String[] val1 = a.split("+");
+    	String[] val2 = b.split("+");
+    	
+    	String result="";
+    	return result;
+    }
+    public static void main(String[] args) {
+		int i=-1;
+		System.out.println(i);
+	}
+}

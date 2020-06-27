@@ -1,0 +1,78 @@
+package interviewBits;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class TextFormatting {
+
+	public static int textFormatting(List<Integer> starting, List<Integer> ending, List<Character> style) {
+		// Write your code here
+
+		Map<Character, List<Integer>> map = new HashMap();
+		int operations = 0;
+		for (int i = 0; i < starting.size(); i++) {
+			if (!map.containsKey(style.get(i))) {
+				List<Integer> lst = new ArrayList<>();
+				lst.add(starting.get(i));
+				lst.add(ending.get(i));
+				map.put(style.get(i), lst);
+				operations++;
+			} else {
+				int start = map.get(style.get(i)).get(0);
+				int end = map.get(style.get(i)).get(1);
+				if (starting.get(i) < start && ending.get(i) > end) {
+					operations++;
+					List<Integer> lst = new ArrayList<>();
+					lst.add(start);
+					lst.add(end);
+					map.put(style.get(i), lst);
+				} else if (starting.get(i) < start) {
+					map.get(style.get(i)).remove(0);
+					// lst.remove(0);
+					map.get(style.get(i)).add(0, starting.get(i));
+					// map.put(style.get(i),lst);
+					operations++;
+				} else if (ending.get(i) > end) {
+					// List<Integer> lst = map.get(i);
+					map.get(style.get(i)).remove(1);
+					map.get(style.get(i)).add(1, ending.get(i));
+					// map.put(style.get(i),lst);
+					operations++;
+				}
+			}
+
+		}
+		return operations;
+	}
+
+	public static void main(String[] args) {
+		TextFormatting obj = new TextFormatting();
+		List<Integer> starting = new ArrayList();
+		starting.add(1);
+		starting.add(17);
+		starting.add(3);
+		starting.add(3);
+		starting.add(1);
+		starting.add(13);
+		List<Integer> ending=new ArrayList();
+		ending.add(5);
+		ending.add(20);
+		ending.add(8);
+		ending.add(12);
+		ending.add(1);
+		ending.add(18);
+		List<Character> style=new ArrayList();
+		style.add('b');
+		style.add('b');
+		style.add('i');
+		style.add('i');
+		style.add('u');
+		style.add('u');
+		
+		
+		System.out.println(obj.textFormatting(starting, ending, style));
+
+	}
+}

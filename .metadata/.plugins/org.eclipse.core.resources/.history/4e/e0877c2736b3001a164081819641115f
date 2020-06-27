@@ -1,0 +1,26 @@
+package interview;
+
+public class ComplexNumMul {
+	class Complex{
+        int r;
+        int i;
+        Complex(int r,int i){
+        	this.r=r;
+        	this.i=i;
+        }
+    }
+    public String complexNumberMultiply(String a, String b) {
+    	String[] val1 = a.split("+");
+    	String[] val2 = b.split("+");
+    	int r1,i1,r2,i2;
+    	if(val1[0].charAt(0)=='-') {
+    		r1=(int) val1[0].substring(1);
+    	}
+    	String result="";
+    	return result;
+    }
+    public static void main(String[] args) {
+		String i="-1";
+		System.out.println(Integer.parseInt(i));
+	}
+}

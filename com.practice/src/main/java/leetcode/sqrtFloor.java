@@ -1,5 +1,10 @@
 package leetcode;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 public class sqrtFloor {
 	public int sqrt(int x) {
 		
@@ -31,7 +36,8 @@ public class sqrtFloor {
 	    	sqrtFloor obj = new sqrtFloor();
 	    	System.out.println(obj.sqrt(3));
 	    	int [] a = new int[2];
-	    	int f = a.length
+	    	int f = a.length;
+			
 	    	
 		}
 }

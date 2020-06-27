@@ -1,0 +1,21 @@
+package interview;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.jar.Manifest;
+
+public class Problem1 {
+	public static void main(String[] args) {
+		int[] arr = { 3, 5, 3, 7, 9, 11, 5, 3, 5, 3, 7, 9, 9, 11 };
+		Map<Integer, Integer> map = new HashMap();
+		for(int i: arr) {
+			
+				map.put(i, map.getOrDefault(i, 0)+1);
+			
+		}
+		for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
+			System.out.println(entry.getKey()+ " - "+entry.getValue());
+		}
+		
+	}
+}

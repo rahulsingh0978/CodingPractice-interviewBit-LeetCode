@@ -1,0 +1,12 @@
+package interview;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Problem1 {
+public static void main(String[] args) {
+	int[] arr = {3,5,3,7,9,11,5,3,5,3,7,9,9,11};
+	Map<Integer,Integer> map = new HashMap();
+	
+}
+}
