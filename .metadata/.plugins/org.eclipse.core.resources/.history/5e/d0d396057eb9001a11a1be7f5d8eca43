@@ -1,0 +1,8 @@
+package design.low.level.parking;
+
+import design.low.level.parking.Vehicle.VehicleType;
+
+public class Bike implements Vehicle{
+private VehicleType type;
+
+}

@@ -1,0 +1,7 @@
+package Multithreading;
+
+public class Thread_03_02 {
+	public static void main(String[] args) {
+		
+	}
+}

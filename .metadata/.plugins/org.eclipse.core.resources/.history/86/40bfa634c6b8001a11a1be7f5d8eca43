@@ -1,0 +1,9 @@
+package Multithreading;
+
+public class Threads_01_02 {
+	public static void main(String[] args) {
+		(new Thread(new HelloRunnable())).start();
+		
+		
+	}
+}

@@ -1,0 +1,6 @@
+package design.low.level.parking;
+
+public interface Space extends Vehicle {
+	boolean getIsTaken();
+	void setIsTaken(boolean isTaken);
+}

@@ -1,0 +1,19 @@
+package Multithreading;
+
+public class Thread_02_02 {
+	static int counter = 0;
+
+	public static void main(String[] args) {
+		Runnable r1 = () -> {
+			System.out.println("getting the id value"+getId());
+		};
+		Thread t1 = new Thread(r1, "one");
+		Thread t2 = new Thread(r1, "two");
+		t1.start();
+		t2.start();
+	}
+
+	public static int getId() {
+		return counter++;
+	}
+}

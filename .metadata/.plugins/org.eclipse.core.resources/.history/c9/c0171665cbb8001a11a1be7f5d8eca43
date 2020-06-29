@@ -1,0 +1,21 @@
+package Multithreading;
+
+public class Thread_02_01 {
+	static double a = 10;
+	static double b;
+
+	public static void main(String[] args) {
+		Runnable r1 = () ->
+		{
+		if(a==10) {
+			try{
+				
+			Thread.sleep(0);
+			b=a/2.0;
+			}catch(Exception e) {
+				System.out.println(e);
+			}
+		}
+		};
+	}
+}

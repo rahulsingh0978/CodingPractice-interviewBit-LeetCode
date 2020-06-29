@@ -1,0 +1,10 @@
+package interview.prep.latest;
+
+public class StringManipulation {
+	public static void main(String[] args) {
+		String s1 = "Rahul";
+		String s2 = "Singh";
+		String concat = s1.concat(" ").concat(s2);
+		System.out.println(concat);
+	}
+}

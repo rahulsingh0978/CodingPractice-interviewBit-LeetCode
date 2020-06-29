@@ -1,0 +1,15 @@
+package Multithreading;
+
+import java.util.concurrent.CountDownLatch;
+
+public class Worker extends Thread{
+	private final CountDownLatch start;
+	private final CountDownLatch end;
+	
+	public Worker(CountDownLatch start,CountDownLatch end) {
+		this.start=start;
+		this.end=end;
+	}
+	
+
+}

@@ -1,0 +1,19 @@
+package Multithreading;
+
+public class Threads_01_02 {
+	public static void main(String[] args) {
+		(new Thread(new HelloRunnable())).start();
+		
+		(new HelloThread()).run();
+		
+		Runnable r1 = new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				System.out.println("THis is lambda way of creading the thread "+Thread.currentThread().getName());
+			}
+			
+		}
+	}
+}

@@ -1,0 +1,12 @@
+package Multithreading;
+
+public class HelloThread implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("Inside the hello thread class");
+		
+	}
+
+}

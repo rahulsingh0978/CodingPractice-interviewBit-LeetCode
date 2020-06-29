@@ -1,0 +1,29 @@
+package Multithreading;
+
+public class WaitAndNotify {
+	public static void main(String[] args) {
+		THreadB t = new THreadB();
+		t.start();
+		synchronized(t) {
+			try {
+				System.out.println("Waiting for the thread to start ");
+				t.wait();
+			}catch(InterruptedException e) {
+				System.out.println(e);
+			}
+			System.out.println("Total is : "+t.total);
+		}
+		
+	}
+}
+class THreadB extends Thread{
+	int total;
+	public void run() {
+		synchronized(this) {
+			for(int i=0;i<100;i++) {
+				total+=i;
+			}
+			notify();
+		}
+	}
+}

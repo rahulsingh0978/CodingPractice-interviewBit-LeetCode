@@ -1,0 +1,5 @@
+package design.low.level.parking;
+
+public interface Space {
+
+}
